@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="menu container">
+            <a href="index.html" class="index">
+                <img src="logoo.png.png" class="menu-icono" alt="Logo">
+            </a>
+            
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="logo7.png" class="menu-icono" alt="Logo">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicio</a></li>
+                    <li><a href="#">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Kapper</h1>
+                <span>Barbería</span>
+                <p>
+                    Bienvenidos a Kapper, tu barbería de confianza en Bogotá.
+                    Contamos con los mejores barberos de la ciudad, listos para
+                    ofrecerte un servicio personalizado y de calidad. Reserva tu cita
+                    fácilmente y disfruta de una experiencia de cuidado único.
+                </p>
+                <a href="#" class="btn-1">Información</a>
+            </div>
+
+            <div class="header-dir">
+                <div class="dir">
+                    <h3>Ciudad</h3>
+                <p>Bogota </p>
+                </div>
+                <div class="dir">
+                    <h3>Dirección</h3>
+                    <p>Av. Cra 19 #120-60</p>
+                </div>
+                <div class="dir">
+                    <h3>Horario</h3>
+                    <p>9am a 8pm</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="services container">
+        <div class="services-txt">
+            <h2>Nuestros servicios</h2>
+            <hr>
+        </div>
+
+        <div class="service-group">
+            <div class="service-1">
+                <img src="barba.png" alt="Servicio 1"> <!-- Imagen de servicio 1 -->
+                <h3>Barba</h3>
+                <a href="#">Saber más</a>
+            </div>
+            <div class="service-1">
+                <img src="faciales.png" alt="Servicio 2"> <!-- Imagen de servicio 2 -->
+                <h3>Tratamientos faciales</h3>
+                <a href="#">Saber más</a>
+            </div>
+            <div class="service-1">
+                <img src="tratamiento.png" alt="Servicio 3"> <!-- Imagen de servicio 3 -->
+                <h3>Tratamientos Capilares</h3>
+                <a href="#">Saber más</a>
+            </div>
+        </div>
+
+        <div class="service-group">
+            <div class="service-1">
+                <img src="piel.png" alt="Servicio 4"> <!-- Imagen de servicio 4 -->
+                <h3>Depilación</h3>
+                <a href="#">Saber más</a>
+            </div>
+            <div class="service-1">
+                <img src="tinte.png" alt="Servicio 5"> <!-- Imagen de servicio 5 -->
+                <h3>Tintura</h3>
+                <a href="#">Saber más</a>
+            </div>
+            <div class="service-1">
+                <img src="combo.png" alt="Servicio 6"> <!-- Imagen de servicio 6 -->
+                <h3>Cortes</h3>
+                <a href="#">Saber más</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="prices">
+        <div class="prices-1">
+            <h2>Lista de precios</h2>
+            <p>
+                En Kapper, entendemos que la apariencia personal es una parte fundamental de tu estilo y confianza.
+                Por eso, ofrecemos una gama de servicios de barbería de alta calidad, diseñados para que te sientas y luzcas lo mejor posible.
+                Nuestros precios son justos y reflejan el valor excepcional que brindamos en cada corte y servicio.
+            </p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Barba</th>
+                        <td>$8.000</td>
+                    </tr>
+                    <tr>
+                        <th>Tratamientos Faciales</th>
+                        <td>$30.000</td>
+                    </tr>
+                    <tr>
+                        <th>Tratamientos Capilares</th>
+                        <td>$100.000</td>
+                    </tr>
+                    <tr>
+                        <th>Depilación</th>
+                        <td>$10.000</td>
+                    </tr>
+                    <tr>
+                        <th>Tintura</th>
+                        <td>$80.000</td>
+                    </tr>
+                    <tr>
+                        <th>Cortes</th>
+                        <td>$25.000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class="btn-1">Información</a>
+        </div>
+        <div class="prices-2"></div>
+    </section>
+
+    <footer>
+        <div class="footer-bg">
+            <h2>Agenda Tu Cita</h2>
+            <form>
+                <div class="campo-1">
+                    <input class="campo" type="text" placeholder="Nombre" required>
+                    <input class="campo" type="text" placeholder="Apellido" required>
+                </div>
+                <div class="campo-1">
+                    <input class="campo" type="text" placeholder="Teléfono" required>
+                    <input class="campo" type="email" placeholder="Correo" required>
+                </div>
+                <div class="campo-1">
+                    <input class="campo" type="datetime-local" placeholder="Fecha y Hora" required>
+                </div>
+                <div class="campo-1">
+                    <select class="campo" required>
+                        <option value="" disabled selected>Selecciona un Servicio</option>
+                        <option value="barba">Barba</option>
+                        <option value="tratamientos_faciales">Tratamientos Faciales</option>
+                        <option value="tratamientos_capilares">Tratamientos Capilares</option>
+                        <option value="depilacion">Depilación</option>
+                        <option value="tintura">Tintura</option>
+                        <option value="cortes">Cortes</option>
+                    </select>
+                </div>
+                <textarea class="campo" cols="30" rows="10" placeholder="Texto adicional"></textarea>
+                <input type="submit" value="Enviar" class="btn-1">
+            </form>
+        </div>
+
+        <div class="footer-txt">
+            <p>
+                © 2024, Barbería Kapper by 365 Company
+                Política de reembolso
+                Términos del servicio
+            </p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.6753180297123!2d-74.06556182436806!3d4.6518708953229595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a45da189a37%3A0xbde0ac1297afa44c!2sKr%2013%20%2365-10%2C%20Chapinero%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1728502802750!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+
+</body>
+
+</html>
