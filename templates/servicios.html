@@ -1,0 +1,108 @@
+.{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbería</title>
+    <link rel="stylesheet" href="{% static 'css/servicios.css' %}">
+    <style>
+        .service-1 {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 8px;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .service-1.seleccionada {
+            background-color: #f0f8ff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="index">
+                <img src="{% static 'img/logoo.png.png' %}" alt="Logo" class="menu-icono">
+            </a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                    <li><a href="{% url 'agenda' %}">Agenda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="services container">
+        <div class="services-txt">
+            <h2>¡ Nuestros servicios !</h2>
+            <hr>
+        </div>
+        <div class="service-group">
+            <div class="service-1" data-id="1">
+                <img src="{% static 'img/a2.jpg' %}" alt="Servicio 1">
+                <h3>Corte $25.000</h3>
+                <a href="#" onclick="seleccionarServicio(1)">Seleccionar</a>
+            </div>
+            <div class="service-1" data-id="2">
+                <img src="{% static 'img/faciales.png' %}" alt="Servicio 2">
+                <h3>Facial $10.000</h3>
+                <a href="#" onclick="seleccionarServicio(2)">Seleccionar</a>
+            </div>
+            <div class="service-1" data-id="3">
+                <img src="{% static 'img/barba.png' %}" alt="Servicio 3">
+                <h3>Barba $5.000</h3>
+                <a href="#" onclick="seleccionarServicio(3)">Seleccionar</a>
+            </div>
+            <div class="service-1" data-id="4">
+                <img src="{% static 'img/b4.jpg' %}" alt="Servicio 4">
+                <h3>Cejas $3.000</h3>
+                <a href="#" onclick="seleccionarServicio(4)">Seleccionar</a>
+            </div>
+        </div>
+    
+        <div id="selected-services" class="service-group">
+            <!-- Aquí se mostrarán las tarjetas seleccionadas -->
+        </div>
+        <button id="agendar-btn" style="display: none;" onclick="agendarServicios()">Agendar servicios seleccionados</button>
+    </main>
+
+    <script>
+        const selectedServices = new Set();
+
+        function seleccionarServicio(id) {
+            const serviceDiv = document.querySelector(`.service-1[data-id="${id}"]`);
+            serviceDiv.classList.toggle('seleccionada');
+            
+            if (serviceDiv.classList.contains('seleccionada')) {
+                selectedServices.add(id);
+            } else {
+                selectedServices.delete(id);
+            }
+
+            // Actualizar el botón de "Agendar servicios seleccionados"
+            const agendarButton = document.getElementById('agendar-btn');
+            if (selectedServices.size > 0) {
+                agendarButton.style.display = 'block';
+            } else {
+                agendarButton.style.display = 'none';
+            }
+        }
+
+        function agendarServicios() {
+            if (selectedServices.size === 0) {
+                alert('Por favor, selecciona al menos un servicio.');
+                return;
+            }
+            
+            // Redirigir a la página de agenda, pasando los servicios seleccionados como parámetros
+            const serviciosIds = Array.from(selectedServices).join(',');
+            window.location.href = `{% url 'agenda' %}?servicios=${serviciosIds}`;
+        }
+    </script>
+</body>
+</html>
